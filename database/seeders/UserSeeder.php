@@ -18,16 +18,20 @@ class UserSeeder extends Seeder
             'role' => 'admin',
             'nim' => null,
             'nip' => 'ADM001',
+            'program_studi' => null,
+            'golongan' => 'III/d',
         ]);
 
         // Dosen
         User::create([
-            'name' => 'Budi Santoso',
+            'name' => 'Budi Santoso, M.Kom',
             'email' => 'dosen@esurat.com',
             'password' => Hash::make('password'),
             'role' => 'dosen',
             'nim' => null,
             'nip' => 'NIP001',
+            'program_studi' => 'Teknik Informatika',
+            'golongan' => 'Lektor Kepala',
         ]);
 
         // Mahasiswa
@@ -38,6 +42,20 @@ class UserSeeder extends Seeder
             'role' => 'mahasiswa',
             'nim' => '2024001',
             'nip' => null,
+            'program_studi' => 'Teknik Informatika',
+            'golongan' => null,
+        ]);
+
+        // Mahasiswa 2
+        User::create([
+            'name' => 'Dewi Lestari',
+            'email' => 'mahasiswa2@esurat.com',
+            'password' => Hash::make('password'),
+            'role' => 'mahasiswa',
+            'nim' => '2024002',
+            'nip' => null,
+            'program_studi' => 'Sistem Informasi',
+            'golongan' => null,
         ]);
     }
 }
