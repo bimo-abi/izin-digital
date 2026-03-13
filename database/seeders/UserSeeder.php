@@ -34,13 +34,13 @@ class UserSeeder extends Seeder
             'golongan' => 'Lektor Kepala',
         ]);
 
-        // Mahasiswa
+        // Mahasiswa 1
         User::create([
             'name' => 'Ahmad Rizki',
             'email' => 'mahasiswa@esurat.com',
             'password' => Hash::make('password'),
             'role' => 'mahasiswa',
-            'nim' => '2024001',
+            'nim' => 'E41250904',
             'nip' => null,
             'program_studi' => 'Teknik Informatika',
             'golongan' => null,
@@ -52,7 +52,7 @@ class UserSeeder extends Seeder
             'email' => 'mahasiswa2@esurat.com',
             'password' => Hash::make('password'),
             'role' => 'mahasiswa',
-            'nim' => '2024002',
+            'nim' => 'E41250905',  
             'nip' => null,
             'program_studi' => 'Sistem Informasi',
             'golongan' => null,
