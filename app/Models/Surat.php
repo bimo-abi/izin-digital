@@ -13,6 +13,7 @@ class Surat extends Model
         'user_id',
         'jenis_surat_id',
         'keperluan',
+        'bukti_pendukung',
         'status',
         'nomor_surat',
         'file_pdf',

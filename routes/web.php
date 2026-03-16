@@ -6,12 +6,8 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboard;
 use App\Http\Controllers\Dosen\DashboardController as DosenDashboard;
 use App\Http\Controllers\Mahasiswa\DashboardController as MahasiswaDashboard;
+use App\Http\Controllers\Mahasiswa\SuratController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-*/
 
 // Root redirect to login
 Route::get('/', function () {
@@ -47,5 +43,11 @@ Route::middleware('auth')->group(function () {
     // Mahasiswa routes (hanya mahasiswa yang bisa akses)
     Route::middleware('role:mahasiswa')->prefix('mahasiswa')->group(function () {
         Route::get('/dashboard', [MahasiswaDashboard::class, 'index'])->name('mahasiswa.dashboard');
+
+        // Surat routes
+        Route::get('/surat/create', [\App\Http\Controllers\Mahasiswa\SuratController::class, 'create'])->name('mahasiswa.surat.create');
+        Route::post('/surat', [\App\Http\Controllers\Mahasiswa\SuratController::class, 'store'])->name('mahasiswa.surat.store');
+        Route::get('/surat', [\App\Http\Controllers\Mahasiswa\SuratController::class, 'index'])->name('mahasiswa.surat.index');
+        Route::get('/surat/{surat}/download', [\App\Http\Controllers\Mahasiswa\SuratController::class, 'download'])->name('mahasiswa.surat.download');
     });
 });
